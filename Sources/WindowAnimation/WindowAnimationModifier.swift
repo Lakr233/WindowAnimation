@@ -8,7 +8,7 @@ import SwiftUI
 private let interpolationConfiguration = SpringInterpolation.Configuration(
     angularFrequency: 4,
     dampingRatio: 1,
-    threshold: 1,
+    threshold: 2,
     stopWhenHitTarget: true
 )
 
@@ -58,6 +58,10 @@ public struct WindowAnimationModifier: ViewModifier {
         let deltaTime = Date().timeIntervalSince(lastUpdate)
         springInterpolation.update(withDeltaTime: deltaTime * speed)
         if springInterpolation.completed {
+            springInterpolation.setCurrent(.init(
+                x: springInterpolation.x.context.targetPos,
+                y: springInterpolation.y.context.targetPos
+            ))
             requiresUpdate = false
         }
     }

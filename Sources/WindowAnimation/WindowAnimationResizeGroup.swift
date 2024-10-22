@@ -1,5 +1,5 @@
 //
-//  WindowAnimation+ResizeGroup.swift
+//  WindowAnimationResizeGroup.swift
 //  WindowAnimation
 //
 //  Created by 秋星桥 on 2024/10/23.
