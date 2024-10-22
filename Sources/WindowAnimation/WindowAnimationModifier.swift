@@ -42,8 +42,8 @@ public struct WindowAnimationModifier: ViewModifier {
 
     private func updateSize(_ size: CGSize) {
         let target = SpringInterpolation2D.Vec2D(x: size.width, y: size.height)
-        if abs(springInterpolation.x.value.distance(to: 0)) < springInterpolation.x.config.threshold,
-           abs(springInterpolation.y.value.distance(to: 0)) < springInterpolation.y.config.threshold
+        if ceil(abs(springInterpolation.x.value.distance(to: 0))) <= springInterpolation.x.config.threshold,
+           ceil(abs(springInterpolation.y.value.distance(to: 0))) <= springInterpolation.y.config.threshold
         {
             springInterpolation.setCurrent(target)
         }
@@ -65,7 +65,7 @@ public struct WindowAnimationModifier: ViewModifier {
 
 private extension SpringInterpolation {
     var completed: Bool {
-        abs(context.currentPos.distance(to: context.targetPos)) < config.threshold
+        ceil(abs(context.currentPos.distance(to: context.targetPos))) <= config.threshold
     }
 }
 
