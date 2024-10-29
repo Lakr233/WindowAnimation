@@ -5,27 +5,23 @@ import MSDisplayLink
 import SpringInterpolation
 import SwiftUI
 
-private let interpolationConfiguration = SpringInterpolation.Configuration(
-    angularFrequency: 4,
-    dampingRatio: 1,
-    threshold: 2,
-    stopWhenHitTarget: true
-)
-
 public struct WindowAnimationModifier: ViewModifier {
     let speed: Double
     let alignment: Alignment
 
-    @State var springInterpolation: SpringInterpolation2D = .init()
+    @State var springInterpolation: SpringInterpolation2D
     @State var lastUpdate = Date()
     @State var requiresUpdate = false
 
     public init(
         speed: Double = WindowAnimation.defaultSpeed,
-        alignment: Alignment = WindowAnimation.defaultAlignment
+        alignment: Alignment = WindowAnimation.defaultAlignment,
+        animation: SpringInterpolation.Configuration = WindowAnimation.defaultAnimation
     ) {
         self.speed = speed
         self.alignment = alignment
+
+        _springInterpolation = .init(initialValue: .init(animation))
     }
 
     public func body(content: Content) -> some View {
