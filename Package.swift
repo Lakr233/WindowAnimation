@@ -13,7 +13,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/Lakr233/MSDisplayLink.git", from: "1.1.1"),
-        .package(url: "https://github.com/Lakr233/SpringInterpolation.git", from: "1.2.2"),
+        .package(url: "https://github.com/Lakr233/SpringInterpolation.git", from: "1.3.0"),
     ],
     targets: [
         .target(name: "WindowAnimation", dependencies: [

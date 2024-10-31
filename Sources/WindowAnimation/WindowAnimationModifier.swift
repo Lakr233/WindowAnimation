@@ -62,15 +62,3 @@ public struct WindowAnimationModifier: ViewModifier {
         }
     }
 }
-
-private extension SpringInterpolation {
-    var completed: Bool {
-        ceil(abs(context.currentPos.distance(to: context.targetPos))) <= config.threshold
-    }
-}
-
-private extension SpringInterpolation2D {
-    var completed: Bool {
-        x.completed && y.completed
-    }
-}

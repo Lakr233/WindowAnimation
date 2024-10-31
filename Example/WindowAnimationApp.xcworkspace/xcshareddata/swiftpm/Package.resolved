@@ -12,10 +12,10 @@
     {
       "identity" : "springinterpolation",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Lakr233/SpringInterpolation",
+      "location" : "https://github.com/Lakr233/SpringInterpolation.git",
       "state" : {
-        "revision" : "ff526fec3ef6df62395141a0cc55a4ba2d82ee81",
-        "version" : "1.2.2"
+        "revision" : "f9d1ee3d2466bdb00fd0ade7f256ed20229c8413",
+        "version" : "1.3.0"
       }
     }
   ],
