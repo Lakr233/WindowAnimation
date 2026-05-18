@@ -12,6 +12,7 @@
 		508155E32CC8161C00013E0A /* Hitokoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508155E22CC8161C00013E0A /* Hitokoto.swift */; };
 		508155E52CC8162900013E0A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508155E42CC8162900013E0A /* ContentView.swift */; };
 		50B420982CC81CA5009F4C52 /* HitokotoText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B420972CC81CA5009F4C52 /* HitokotoText.swift */; };
+		C759C2BF95A83B1D05BF8FFD /* LookInsideServer in Frameworks */ = {isa = PBXBuildFile; productRef = 50687BAC9C588E89026D7D44 /* LookInsideServer */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				508155DE2CC7FD8900013E0A /* WindowAnimation in Frameworks */,
+				C759C2BF95A83B1D05BF8FFD /* LookInsideServer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +89,7 @@
 			name = WindowAnimationApp;
 			packageProductDependencies = (
 				508155DD2CC7FD8900013E0A /* WindowAnimation */,
+				50687BAC9C588E89026D7D44 /* LookInsideServer */,
 			);
 			productName = WindowAnimationApp;
 			productReference = 508155B42CC7FAE100013E0A /* WindowAnimationApp.app */;
@@ -117,8 +120,10 @@
 			mainGroup = 508155AB2CC7FAE000013E0A;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
+				0B5332C20A6DB2A6B678C830 /* XCRemoteSwiftPackageReference "LookInside-Release" */,
 			);
 			preferredProjectObjectVersion = 77;
+			productRefGroup = 508155B52CC7FAE100013E0A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -307,6 +312,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 964G86XT2P;
 				ENABLE_HARDENED_RUNTIME = NO;
+				EXCLUDED_SOURCE_FILE_NAMES = (
+					"$(inherited)",
+					"LookInsideServer*",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -345,7 +354,23 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		0B5332C20A6DB2A6B678C830 /* XCRemoteSwiftPackageReference "LookInside-Release" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/LookInsideApp/LookInside-Release.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
+		50687BAC9C588E89026D7D44 /* LookInsideServer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0B5332C20A6DB2A6B678C830 /* XCRemoteSwiftPackageReference "LookInside-Release" */;
+			productName = LookInsideServer;
+		};
 		508155DD2CC7FD8900013E0A /* WindowAnimation */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = WindowAnimation;
