@@ -13,7 +13,7 @@ To use this library, add the package to your project and then import it.
     .package(url: "https://github.com/Lakr233/WindowAnimation", from: "1.0.0"),
 ]
 
-import WindowAnimation // requires macOS 11.0 or later
+import WindowAnimation // requires macOS 12.0 or later
 ```
 
 ### Using `WindowAnimationResizeGroup`

@@ -1,7 +1,7 @@
 // The Swift Programming Language
 // https://docs.swift.org/swift-book
 
-import MSDisplayLink
+import DisplayLink
 import SpringInterpolation
 import SwiftUI
 
@@ -33,7 +33,7 @@ public struct WindowAnimationModifier: ViewModifier {
                 alignment: alignment
             )
             .fixedSize()
-            .modifier(DisplayLinkModifier(scheduleToMainThread: true) { tik() })
+            .onDisplayLink { _ in tik() }
     }
 
     private func updateSize(_ size: CGSize) {
