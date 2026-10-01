@@ -4,16 +4,21 @@ WindowAnimation is a library designed to create animations when resizing SwiftUI
 
 ![Preview](./Resources/Recording.gif)
 
+## Requirements
+
+- macOS 12.0 or later
+- Swift 6.2 or later (Swift 6 language mode)
+
 ## Usage
 
 To use this library, add the package to your project and then import it.
 
 ```swift
 [
-    .package(url: "https://github.com/Lakr233/WindowAnimation", from: "1.0.0"),
+    .package(url: "https://github.com/Lakr233/WindowAnimation", from: "2.0.0"),
 ]
 
-import WindowAnimation // requires macOS 12.0 or later
+import WindowAnimation
 ```
 
 ### Using `WindowAnimationResizeGroup`
@@ -52,6 +57,26 @@ There are parameters within the initializers. See examples below.
 WindowAnimationResizeGroup(speed: 10, alignment: .center)
 WindowAnimationModifier(speed: 4.0, alignment: .bottom)
 ```
+
+Global defaults live on `WindowAnimation` and are isolated to the main actor. Set them from main-actor code, such as your `App` initializer, before any window is created.
+
+```swift
+@main
+struct ExampleApp: App {
+    init() {
+        WindowAnimation.defaultSpeed = 6
+        WindowAnimation.defaultAlignment = .center
+    }
+
+    var body: some Scene { /* ... */ }
+}
+```
+
+## Migrating from 1.x
+
+- `WindowAnimation` is now `@MainActor`. Read and write `defaultSpeed`, `defaultAlignment` and `defaultAnimation` from the main actor; from other contexts, use `await MainActor.run { ... }`.
+- The package now requires Swift 6.2 tools and builds in Swift 6 language mode.
+- `WindowAnimationResizeGroup` now applies its `alignment` parameter. In 1.x it was ignored and the modifier fell back to `WindowAnimation.defaultAlignment`.
 
 ## License
 

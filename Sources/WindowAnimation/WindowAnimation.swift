@@ -8,6 +8,7 @@
 import SpringInterpolation
 import SwiftUI
 
+@MainActor
 public enum WindowAnimation {
     // factor for delta time
     public static var defaultSpeed: Double = 4.0

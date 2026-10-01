@@ -26,7 +26,7 @@ public struct WindowAnimationResizeGroup<Content: View>: Scene {
     public var body: some Scene {
         WindowGroup {
             content()
-                .modifier(WindowAnimationModifier(speed: speed))
+                .modifier(WindowAnimationModifier(speed: speed, alignment: alignment))
         }
         .windowResizability(.contentSize)
     }

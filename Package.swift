@@ -20,6 +20,5 @@ let package = Package(
             "DisplayLink",
             "SpringInterpolation",
         ]),
-    ],
-    swiftLanguageModes: [.v5]
+    ]
 )
